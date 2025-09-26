@@ -7,7 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>UNDERTALE 10周年</title>
+    <title>UNDERTALE 十周年庆特辑</title>
     <style>
       html {
         background: #000000;
@@ -313,7 +313,7 @@
           var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
           var now = Date.now();
           if (m && now - Module.setStatus.last.time < 30) return;
-		  if (text.includes("Downloading data...")) text = "Downloading data...";
+		  if (text.includes("正在下载数据...")) text = "正在下载数据...";
           Module.setStatus.last.time = now;
           Module.setStatus.last.text = text;
           if (m) {
@@ -330,16 +330,16 @@
           this.totalDependencies = Math.max(this.totalDependencies, left);
           Module.setStatus(
             left
-              ? "Preparing... (" +
+              ? "准备中... (" +
                   (this.totalDependencies - left) +
                   "/" +
                   this.totalDependencies +
                   ")"
-              : "All downloads complete."
+              : "全部下载完成。"
           );
         },
       };
-      Module.setStatus("Downloading...");
+      Module.setStatus("下载中...");
 
       if (typeof window === "object") {
         Module['arguments'] = [];
